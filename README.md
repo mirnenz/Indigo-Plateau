@@ -7,4 +7,4 @@
 3. Developer
 	- Mirko Nenzel [mirnenz](https://github.com/mirnenz)
 	- Pascal Gutermuth [pgutermuth](https://github.com/pgutermuth)
-	- Thorben Siering []()
+	- Thorben Siering [nastyyy1](https://github.com/nastyyy1)
