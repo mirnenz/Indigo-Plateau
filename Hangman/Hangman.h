@@ -73,7 +73,7 @@ void GalgenBeinRL() {
     printf("|        \n");
     printf("|________\n");
 }
-void GalgenBeinRL() {
+void Verloren() {
     printf("######################################################\n");
     printf("#   #   # #### ###  #       ##    ###  #### ##  #   #\n");
     printf("#   #   # #    #  # #     ##  ##  #  # #    # # #   #\n");
