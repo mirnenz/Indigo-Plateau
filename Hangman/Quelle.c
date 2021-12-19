@@ -1,6 +1,4 @@
-#include <stdio.h>
-
+#include "Hangman.h"
 int main() {
 
-	printf("Hello");
 }
