@@ -19,9 +19,7 @@ int main() {
     char str_schwer[][16] = {"Rucksack", "Sandsack", "Internet", "Ewigkeit"};
     //printf("%s\n", str_schwer[2]);
 
-    int i = 0;
-    char* Auswahl = "Spiel_starten";
-    char Input;
+
 
     //Menü
 
@@ -32,9 +30,7 @@ int main() {
 
     while (1)
     {
-
         Input = _getch();
-
 
         //Hauptmenü Screen
 
@@ -70,7 +66,7 @@ int main() {
         }
        
 
-        //Spiel starten (Schwierigkeitsauswahl)
+        //Spiel starten
         if (Input == ENTER & Auswahl == "Spiel_starten") {
             system(CLEAR);
             Anfänger();
@@ -122,7 +118,38 @@ int main() {
             Auswahl = "Spiel_starten";
         }
 
-        //Spiel starten (auswahl anfänger experte ....)
+        //Schwierigkeitsauswahl
+        if (Input == ENTER & Auswahl == "Anfänger") {
+            system(CLEAR);
+            AnfängerSchw();
+            Auswahl = "AnfängerSchw";
+        }
+        else if (Input == ENTER & Auswahl == "Fortgeschritten") {
+            system(CLEAR);
+            FortgeschrittenSchw();
+            Auswahl = "FortgeschrittenSchw";
+        }
+        else if (Input == ENTER & Auswahl == "Experte") {
+            system(CLEAR);
+            ExperteSchw();
+            Auswahl = "ExperteSchw";
+        }
+        else if (Input == ESC & Auswahl == "AnfängerSchw") {
+            system(CLEAR);
+            Anfänger();
+            Auswahl = "Anfänger";
+        }
+        else if (Input == ESC & Auswahl == "FortgeschrittenSchw") {
+            system(CLEAR);
+            Anfänger();
+            Auswahl = "Anfänger";
+        }
+        else if (Input == ESC & Auswahl == "ExperteSchw") {
+            system(CLEAR);
+            Anfänger();
+            Auswahl = "Anfänger";
+        }
+        
         
         //Regeln
         if (Input == ENTER & Auswahl == "Regeln") {
@@ -142,7 +169,6 @@ int main() {
             //eventuell zum trollen shutdown
         }
 
-    
     }
     
 }

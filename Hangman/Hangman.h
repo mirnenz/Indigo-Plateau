@@ -7,6 +7,10 @@
 #define ENTER       13
 #define ESC         27
 
+int i = 0;
+char* Auswahl = "Spiel_starten";
+char Input;
+
 //Definitionen Farben
 #define ANSI_RED "\x1b[31m" 
 #define ANSI_GREEN "\x1b[32m" 
@@ -42,6 +46,7 @@ void Startscreen() {
     system(CLEAR);
 }
 void Spiel_startenROT() {
+    Input = '0';
     printf("\n\n\n");
     printf(ANSI_RED);
     printf("\t\tSpiel starten\n");
@@ -51,6 +56,7 @@ void Spiel_startenROT() {
 }
 
 void RegelnROT() {
+    Input = '0';
     printf("\n\n\n");
     printf("\t\tSpiel starten\n");
     printf(ANSI_RED);
@@ -60,6 +66,7 @@ void RegelnROT() {
 }
 
 void Spiel_beendenROT() {
+    Input = '0';
     printf("\n\n\n");
     printf("\t\tSpiel starten\n");
     printf(ANSI_RESET);
@@ -71,6 +78,7 @@ void Spiel_beendenROT() {
 
 //Spiel starten Funktionen (Schwierigkeitsauswahl)
 void Anfänger() {
+    Input = '0';
     printf("\n\n\n");
     printf(ANSI_RED);
     printf("\t\tAnfaenger\n");
@@ -80,6 +88,7 @@ void Anfänger() {
 }
 
 void Fortgeschritten() {
+    Input = '0';
     printf("\n\n\n");
     printf("\t\tAnfaenger\n");
     printf(ANSI_RED);
@@ -89,6 +98,7 @@ void Fortgeschritten() {
 }
 
 void Experte() {
+    Input = '0';
     printf("\n\n\n");
     printf("\t\tAnfaenger\n");
     printf(ANSI_RESET);
@@ -96,6 +106,25 @@ void Experte() {
     printf(ANSI_RED);
     printf("\t\tExperte\n");
     printf(ANSI_RESET);
+}
+
+//Schwierigkeitsauswahl (Anfänger, Fortgeschritten, Experte)
+void AnfängerSchw() {
+    Input = '0';
+    printf("Test");
+
+}
+
+void FortgeschrittenSchw() {
+    Input = '0';
+    printf("Test");
+
+}
+
+void ExperteSchw() {
+    Input = '0';
+    printf("Test");
+
 }
 
 //Regeln
