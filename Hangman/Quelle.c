@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdbool.h>
 #include <limits.h>
 #include <stdlib.h>
@@ -7,6 +8,16 @@
 
 
 int main() {
+    //4 Buchstaben   
+    char str_einfach[][16] = { "Seil", "Ente", "Hexe","Erde", "Eile", "Fass"};
+    //Test zum Ausgeben des Wortes
+     printf("%s\n", str_einfach[2]);
+    //6 Buchstaben   
+    char str_mittel[][16] = {"Wertig", "Effekt", "Eigelb", "Safari", "Demenz","Center"};
+    printf("%s\n", str_mittel[2]);
+    //8 Buchstaben
+    char str_schwer[][16] = {"Rucksack", "Sandsack", "Internet", "Ewigkeit"};
+    printf("%s\n", str_schwer[2]);
 
     int i = 0, Wert = getchar();
     char* Auswahl = "Start";
