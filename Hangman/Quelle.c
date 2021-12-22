@@ -8,44 +8,130 @@
 
 int main() {
 
-    int i = 0, Wert = getchar();
-    char* Auswahl = "Start";
-    unsigned char Input;
+    int i = 0;
+    char* Auswahl = "Spiel_starten";
+    char Input;
 
+    //Menü
 
-    //Hauptmenü
+    PrüfungBetr();
 
-    StartROT();
+    Startscreen();
+    Spiel_startenROT();
 
     while (1)
     {
 
         Input = _getch();
 
-        //80 gleich Pfeil unten
-        //72 gleich Pfeil oben
 
+        //Hauptmenü Screen
 
-        if (Input == 80 & Auswahl == "Start") {
-            system("cls");
-            OptionenROT();
-            Auswahl = "Optionen";
+        if (Input == DOWN_ARROW & Auswahl == "Spiel_starten") {
+            system(CLEAR);
+            RegelnROT();
+            Auswahl = "Regeln";
         }
-        else if (Input == 72 & Auswahl == "Start") {
-            system("cls");
-            OptionenROT();
-            Auswahl = "Optionen";
+        else if (Input == UP_ARROW & Auswahl == "Spiel_starten") {
+            system(CLEAR);
+            Spiel_beendenROT();
+            Auswahl = "Spiel_beenden";
         }
-        else if (Input == 72 & Auswahl == "Optionen") {
-            system("cls");
-            StartROT();
-            Auswahl = "Start";
+        else if (Input == UP_ARROW & Auswahl == "Regeln") {
+            system(CLEAR);
+            Spiel_startenROT();
+            Auswahl = "Spiel_starten";
         }
-        else if (Input == 80 & Auswahl == "Optionen") {
-            system("cls");
-            StartROT();
-            Auswahl = "Start";
+        else if (Input == DOWN_ARROW & Auswahl == "Regeln") {
+            system(CLEAR);
+            Spiel_beendenROT();
+            Auswahl = "Spiel_beenden";
+        }
+        else if (Input == UP_ARROW & Auswahl == "Spiel_beenden") {
+            system(CLEAR);
+            RegelnROT();
+            Auswahl = "Regeln";
+        }
+        else if (Input == DOWN_ARROW & Auswahl == "Spiel_beenden") {
+            system(CLEAR);
+            Spiel_startenROT();
+            Auswahl = "Spiel_starten";
+        }
+       
 
+        //Spiel starten (Schwierigkeitsauswahl)
+        if (Input == ENTER & Auswahl == "Spiel_starten") {
+            system(CLEAR);
+            Anfänger();
+            Auswahl = "Anfänger";
         }
+        else if (Input == DOWN_ARROW & Auswahl == "Anfänger") {
+            system(CLEAR);
+            Fortgeschritten();
+            Auswahl = "Fortgeschritten";
+        }
+        else if (Input == UP_ARROW & Auswahl == "Fortgeschritten") {
+            system(CLEAR);
+            Anfänger();
+            Auswahl = "Anfänger";
+        }
+        else if (Input == DOWN_ARROW & Auswahl == "Fortgeschritten") {
+            system(CLEAR);
+            Experte();
+            Auswahl = "Experte";
+        }
+        else if (Input == DOWN_ARROW & Auswahl == "Experte") {
+            system(CLEAR);
+            Anfänger();
+            Auswahl = "Anfänger";
+        }
+        else if (Input == UP_ARROW & Auswahl == "Experte") {
+            system(CLEAR);
+            Fortgeschritten();
+            Auswahl = "Fortgeschritten";
+        }
+        else if (Input == UP_ARROW & Auswahl == "Anfänger") {
+            system(CLEAR);
+            Experte();
+            Auswahl = "Experte";
+        }
+        else if (Input == ESC & Auswahl == "Anfänger") {
+            system(CLEAR);
+            Spiel_startenROT();
+            Auswahl = "Spiel_starten";
+        }
+        else if (Input == ESC & Auswahl == "Fortgeschritten") {
+            system(CLEAR);
+            Spiel_startenROT();
+            Auswahl = "Spiel_starten";
+        }
+        else if (Input == ESC & Auswahl == "Experte") {
+            system(CLEAR);
+            Spiel_startenROT();
+            Auswahl = "Spiel_starten";
+        }
+
+        //Spiel starten (auswahl anfänger experte ....)
+        
+        //Regeln
+        if (Input == ENTER & Auswahl == "Regeln") {
+            system(CLEAR);
+            Regeln();
+            Auswahl = "Regeln";
+        }
+        else if (Input == ESC & Auswahl == "Regeln") {
+            system(CLEAR);
+            Spiel_startenROT();
+            Auswahl = "Spiel_starten";
+        }
+
+        //Spiel beenden
+        if (Input == ENTER & Auswahl == "Spiel_beenden") {
+            exit(0);
+            //eventuell zum trollen shutdown
+        }
+
+    
     }
+    
 }
