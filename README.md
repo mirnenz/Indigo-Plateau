@@ -25,3 +25,20 @@
 - Featurebranches werden nach den Features benannt, zukünftig 
 - Daily am 23.12.2021 um 17:30 geplant 
 - im Anschluss an Daily Sprint Review 
+
+### Daily am 23.12.20121
+- Das Menü wurde erstellt
+- Sprint Backlog ist erstmal abgearbeitet
+
+### Sprint Review
+- Was ist gut gelaufen?
+ 	- Coden lief sehr gut 
+ 	- Sprint Plan wurde eingehalten 
+ 	- funtionierendes Programm 
+ 	- Anforderungen wurden von Product Owner als Erfüllt bewertet
+ 	- Meetings waren gut geplant, konnten eingehalten, die Dailys waren kurz und informativ
+
+- Probleme
+	- verschiedene Programmversionen, gelöst
+	- Mergeprobleme am Beginn -> gitignore Datei
+	- Branch Benennung 
