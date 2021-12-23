@@ -150,6 +150,7 @@ int main() {
             Auswahl = "Anfänger";
         }
         
+
         
         //Regeln
         if (Input == ENTER & Auswahl == "Regeln") {
