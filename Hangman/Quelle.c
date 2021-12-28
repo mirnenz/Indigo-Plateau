@@ -8,10 +8,11 @@
 
 
 int main() {
+
     //4 Buchstaben   
-    char str_einfach[][16] = { "Seil", "Ente", "Hexe","Erde", "Eile", "Fass"};
+    char str_einfach[][16] = { "S,e,i,l", "Ente", "Hexe","Erde", "Eile", "Fass"};
     //Test zum Ausgeben des Wortes
-     printf("%s\n", str_einfach[2]);
+    printf("%c\n", str_einfach[2]);
     //6 Buchstaben   
     char str_mittel[][16] = {"Wertig", "Effekt", "Eigelb", "Safari", "Demenz","Center"};
     printf("%s\n", str_mittel[2]);
@@ -23,7 +24,7 @@ int main() {
     char* Auswahl = "Start";
     unsigned char Input;
 
-
+    /*
     //Hauptmenü
 
     StartROT();
@@ -60,3 +61,4 @@ int main() {
         }
     }
 }
+*/

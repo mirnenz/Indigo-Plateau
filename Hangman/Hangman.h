@@ -14,6 +14,16 @@
 #define ANSI_CYAN "\x1b[36m" 
 #define ANSI_RESET "\x1b[0m"
 
+int Zufallszahl() {
+    int random;
+    time_t zeit = time(NULL);
+    srand(zeit);
+
+    random = rand() % 15;
+    return(random);
+}
+
+
 //FUNKTIONEN
 //Hauptmenü Funktionen
 void StartROT() {
