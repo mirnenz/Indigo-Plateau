@@ -19,7 +19,12 @@ int main() {
     char str_schwer[][16] = {"Rucksack", "Sandsack", "Internet", "Ewigkeit"};
     //printf("%s\n", str_schwer[2]);
 
+    char test [][16] = { "t e s t", "t e s a"};
+    char delimiter[] = {" "};
 
+
+
+    /*
 
     //Menü
 
@@ -121,8 +126,22 @@ int main() {
         //Schwierigkeitsauswahl
         if (Input == ENTER & Auswahl == "Anfänger") {
             system(CLEAR);
-            AnfängerSchw();
             Auswahl = "AnfängerSchw";
+
+            AnfängerSchw();
+            Galgen();
+            printf("\n\tBitte Buchstaben eingeben und Enter druecken!");
+            scanf_s("%c", &EingabeBuchstabe);
+
+
+
+
+
+
+
+
+
+            
         }
         else if (Input == ENTER & Auswahl == "Fortgeschritten") {
             system(CLEAR);
@@ -171,5 +190,5 @@ int main() {
         }
 
     }
-    
+    */
 }

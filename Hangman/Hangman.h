@@ -10,6 +10,8 @@
 int i = 0;
 char* Auswahl = "Spiel_starten";
 char Input;
+char Buchstabe1 = '_', Buchstabe2 = '_', Buchstabe3 = '_', Buchstabe4 = '_', Buchstabe5 = '_', Buchstabe6 = '_', Buchstabe7 = '_', Buchstabe8 = '_';
+char EingabeBuchstabe;
 
 //Definitionen Farben
 #define ANSI_RED "\x1b[31m" 
@@ -111,20 +113,46 @@ void Experte() {
 //Schwierigkeitsauswahl (Anfänger, Fortgeschritten, Experte)
 void AnfängerSchw() {
     Input = '0';
-    printf("Test");
+    printf("\n\t");
+    printf("%c ", Buchstabe1);
+    printf("%c ", Buchstabe2);
+    printf("%c ", Buchstabe3);
+    printf("%c", Buchstabe4);
+    printf("\n");
 
+    
 }
 
 void FortgeschrittenSchw() {
     Input = '0';
-    printf("Test");
+    printf("\n\t");
+    printf("%c ", Buchstabe1);
+    printf("%c ", Buchstabe2);
+    printf("%c ", Buchstabe3);
+    printf("%c ", Buchstabe4);
+    printf("%c ", Buchstabe5);
+    printf("%c", Buchstabe6);
+    printf("\n");
 
+    
+    printf("\tBitte Buchstaben eingeben!");
 }
 
 void ExperteSchw() {
     Input = '0';
-    printf("Test");
+    printf("\n\t");
+    printf("%c ", Buchstabe1);
+    printf("%c ", Buchstabe2);
+    printf("%c ", Buchstabe3);
+    printf("%c ", Buchstabe4);
+    printf("%c ", Buchstabe5);
+    printf("%c ", Buchstabe6);
+    printf("%c ", Buchstabe7);
+    printf("%c", Buchstabe8);
+    printf("\n");
 
+    
+    printf("\tBitte Buchstaben eingeben!");
 }
 
 //Regeln
