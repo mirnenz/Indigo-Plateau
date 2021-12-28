@@ -30,6 +30,16 @@ void PrüfungBetr() {
     #endif
 }
 
+int Zufallszahl() {
+    int random;
+    time_t zeit = time(NULL);
+    srand(zeit);
+
+    random = rand() % 15;
+    return(random);
+}
+
+
 //FUNKTIONEN
 //Hauptmenü Funktionen
 void Startscreen() {

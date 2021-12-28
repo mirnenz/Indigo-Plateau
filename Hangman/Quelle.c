@@ -8,8 +8,9 @@
 
 
 int main() {
+
     //4 Buchstaben   
-    char str_einfach[][16] = { "Seil", "Ente", "Hexe","Erde", "Eile", "Fass"};
+    char str_einfach[][16] = { "S,e,i,l", "Ente", "Hexe","Erde", "Eile", "Fass"};
     //Test zum Ausgeben des Wortes
      //printf("%s\n", str_einfach[2]);
     //6 Buchstaben   
