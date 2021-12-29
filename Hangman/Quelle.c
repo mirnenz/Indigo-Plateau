@@ -7,6 +7,9 @@
 #include "Hangman.h"
 
 
+int x = 0;
+int z = 0;
+
 int main() {
 
     //4 Buchstaben   
@@ -20,117 +23,9 @@ int main() {
     char str_schwer[][16] = {"r u c k s a c k", "s a n d s a c k", "i n t e r n e t", "e w i g k e i t"};
     //printf("%s\n", str_schwer[2]);
 
-    
-    int x = 0;
-
-    for (; x = 1;) {
 
 
-        AnfängerSchw();
-
-        if (Fehler == 0) {
-            Galgen();
-        }
-        else if (Fehler == 1) {
-            GalgenSeil();
-        }
-        else if (Fehler == 2) {
-            GalgenKopf();
-        }
-        else if (Fehler == 3) {
-            GalgenBrust();
-        }
-        else if (Fehler == 4) {
-            GalgenArmR();
-        }
-        else if (Fehler == 5) {
-            GalgenArmRL();
-        }
-        else if (Fehler == 6) {
-            GalgenBeinR();
-        }
-        else if (Fehler == 7) {
-            GalgenBeinRL();
-        }
-        else if (Fehler == 8) {
-            Verloren();
-        }
-
-
-        scanf_s("%c", &EingabeBuchstabe);
-
-
-        char delimiter[] = " ";
-
-        char* Pointer = strtok(str_einfach[4], delimiter);
-
-
-        int i = 1;
-
-        while (Pointer != NULL)
-        {
-
-
-            if (i == 1) {
-                Buchstabe1Char = Pointer[0];
-            }
-            else if (i == 2) {
-                Buchstabe2Char = Pointer[0];
-            }
-            else if (i == 3) {
-                Buchstabe3Char = Pointer[0];
-            }
-            else if (i == 4) {
-                Buchstabe4Char = Pointer[0];
-            }
-            Pointer = strtok(NULL, delimiter);
-            i++;
-        }
-
-        int y = 0;
-
-        Aenderung = false;
-
-        for (;y < 1;) {
-
-            if (Buchstabe1Char == EingabeBuchstabe)
-            {
-                Buchstabe1 = Buchstabe1Char;
-                Aenderung = true;
-            }
-            if (Buchstabe2Char == EingabeBuchstabe)
-            {
-                Buchstabe2 = Buchstabe2Char;
-                Aenderung = true;
-            }
-            if (Buchstabe3Char == EingabeBuchstabe)
-            {
-                Buchstabe3 = Buchstabe3Char;
-                Aenderung = true;
-            }
-            if (Buchstabe4Char == EingabeBuchstabe)
-            {
-                Buchstabe4 = Buchstabe4Char;
-                Aenderung = true;
-            }
-            if (Aenderung == false)
-            {
-                Fehler += 1;
-                printf("tt");
-
-            }
-            y += 1;
-
-        }
-
-        
-        
-        
-        system(CLEAR);
-    }
-
-
-    /*
+ 
 
     //Menü
 
@@ -234,11 +129,141 @@ int main() {
             system(CLEAR);
             Auswahl = "AnfängerSchw";
 
-            
+            for (; x < 4;) {
+
+                system(CLEAR);
+
+                AnfängerSchw();
+
+                if (Fehler == 0) {
+                    Galgen();
+                }
+                else if (Fehler == 1) {
+                    GalgenSeil();
+                }
+                else if (Fehler == 2) {
+                    GalgenKopf();
+                }
+                else if (Fehler == 3) {
+                    GalgenBrust();
+                }
+                else if (Fehler == 4) {
+                    GalgenArmR();
+                }
+                else if (Fehler == 5) {
+                    GalgenArmRL();
+                }
+                else if (Fehler == 6) {
+                    GalgenBeinR();
+                }
+                else if (Fehler == 7) {
+                    GalgenBeinRL();
+                }
+                else if (Fehler == 8) {
+                    system(CLEAR);
+                    Verloren();
+                    x += 4;
+                    Input = _getch;
+                }
+
+                scanf_s("%c", &EingabeBuchstabe);
+
+                if (EingabeBuchstabe == '\n') {
+                    continue;
+                }
+
+
+                
+
+                Pointer = strtok(str_einfach[4], delimiter);
+
+
+                int i = 1;
+
+                while (Pointer != NULL)
+                {
+
+
+                    if (i == 1) {
+                        Buchstabe1Char = Pointer[0];
+                    }
+                    else if (i == 2) {
+                        Buchstabe2Char = Pointer[0];
+                    }
+                    else if (i == 3) {
+                        Buchstabe3Char = Pointer[0];
+                    }
+                    else if (i == 4) {
+                        Buchstabe4Char = Pointer[0];
+                    }
+                    Pointer = strtok(NULL, delimiter);
+                    i++;
+                }
+               
+
+                int y = 0;
+
+                Aenderung = false;
+
+
+                if (Buchstabe1Char == EingabeBuchstabe)
+                {
+                    Buchstabe1 = Buchstabe1Char;
+                    Aenderung = true;
+                    z += 1;
+                }
+                if (Buchstabe2Char == EingabeBuchstabe)
+                {
+                    Buchstabe2 = Buchstabe2Char;
+                    Aenderung = true;
+                    z += 1;
+                }
+                if (Buchstabe3Char == EingabeBuchstabe)
+                {
+                    Buchstabe3 = Buchstabe3Char;
+                    Aenderung = true;
+                    z += 1;
+                }
+                if (Buchstabe4Char == EingabeBuchstabe)
+                {
+                    Buchstabe4 = Buchstabe4Char;
+                    Aenderung = true;
+                    z += 1;
+                }
+                if (Aenderung == false)
+                {
+                    Fehler += 1;
+                }
+
+
+
+
+
+                
+
+                if (z == 4) {
+                    system(CLEAR);
+                    x = z;
+                    printf("Gewonnnen");
+                }
+
+                
+
+            }
 
             
+            ResetBuchstaben();
 
+            Fehler = 0;
+            z = 0;
+            x = 0;
+            Pointer = "0";
 
+            system(CLEAR);
+            Auswahl = "Anfänger";
+            Anfänger();
+            
+                
             
 
 
@@ -293,5 +318,5 @@ int main() {
         }
 
     }
-    */
+    
 }

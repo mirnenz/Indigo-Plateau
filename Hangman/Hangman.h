@@ -14,7 +14,9 @@ char Buchstabe1 = '_', Buchstabe2 = '_', Buchstabe3 = '_', Buchstabe4 = '_', Buc
 char Buchstabe1Char, Buchstabe2Char, Buchstabe3Char, Buchstabe4Char, Buchstabe5Char, Buchstabe6Char, Buchstabe7Char, Buchstabe8Char;
 char EingabeBuchstabe;
 int Fehler = 0;
-bool Aenderung = 0;
+int Aenderung = 0;
+char delimiter[] = " ";
+char* Pointer = "0";
 
 
 //Definitionen Farben
@@ -43,6 +45,26 @@ int Zufallszahl() {
 
     random = rand() % 15;
     return(random);
+}
+
+void ResetBuchstaben() {
+    Buchstabe1 = '_';
+    Buchstabe2 = '_';
+    Buchstabe3 = '_';
+    Buchstabe4 = '_';
+    Buchstabe5 = '_';
+    Buchstabe6 = '_';
+    Buchstabe7 = '_';
+    Buchstabe8 = '_';
+
+    Buchstabe1Char = 0;
+    Buchstabe2Char = 0;
+    Buchstabe3Char = 0;
+    Buchstabe4Char = 0;
+    Buchstabe5Char = 0;
+    Buchstabe6Char = 0;
+    Buchstabe7Char = 0;
+    Buchstabe8Char = 0;
 }
 
 
@@ -133,9 +155,6 @@ void AnfängerSchw() {
     printf("%c ", Buchstabe3);
     printf("%c", Buchstabe4);
     printf("\n");
-
-
-    
 }
 
 void FortgeschrittenSchw() {
@@ -148,9 +167,6 @@ void FortgeschrittenSchw() {
     printf("%c ", Buchstabe5);
     printf("%c", Buchstabe6);
     printf("\n");
-
-    
-    printf("\tBitte Buchstaben eingeben!");
 }
 
 void ExperteSchw() {
@@ -165,9 +181,6 @@ void ExperteSchw() {
     printf("%c ", Buchstabe7);
     printf("%c", Buchstabe8);
     printf("\n");
-
-    
-    printf("\tBitte Buchstaben eingeben!");
 }
 
 //Regeln
