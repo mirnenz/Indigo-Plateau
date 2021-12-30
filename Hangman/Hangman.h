@@ -19,6 +19,7 @@ char delimiter[] = " ";
 char* Pointer = "0";
 
 
+
 //Definitionen Farben
 #define ANSI_RED "\x1b[31m" 
 #define ANSI_GREEN "\x1b[32m" 
@@ -43,7 +44,7 @@ int Zufallszahl() {
     time_t zeit = time(NULL);
     srand(zeit);
 
-    random = rand() % 15;
+    random = rand() % 5;
     return(random);
 }
 

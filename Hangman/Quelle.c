@@ -10,6 +10,7 @@
 int x = 0;
 int z = 0;
 
+
 int main() {
 
     //4 Buchstaben   
@@ -22,9 +23,8 @@ int main() {
     //8 Buchstaben
     char str_schwer[][16] = {"r u c k s a c k", "s a n d s a c k", "i n t e r n e t", "e w i g k e i t"};
     //printf("%s\n", str_schwer[2]);
-
-
-
+    char str_verarbeitung[][16] = {""};
+  
  
 
     //Menü
@@ -128,6 +128,9 @@ int main() {
         if (Input == ENTER & Auswahl == "Anfänger") {
             system(CLEAR);
             Auswahl = "AnfängerSchw";
+            int Random = Zufallszahl();
+            strcpy(str_verarbeitung[0], str_einfach[Random]);
+            EingabeBuchstabe = "0";
 
             for (; x < 4;) {
 
@@ -163,7 +166,7 @@ int main() {
                     system(CLEAR);
                     Verloren();
                     x += 4;
-                    Input = _getch;
+                    Input = _getch();
                 }
 
                 scanf_s("%c", &EingabeBuchstabe);
@@ -173,9 +176,7 @@ int main() {
                 }
 
 
-                
-
-                Pointer = strtok(str_einfach[4], delimiter);
+                Pointer = strtok(str_verarbeitung[0], delimiter);
 
 
                 int i = 1;
@@ -244,20 +245,22 @@ int main() {
                 if (z == 4) {
                     system(CLEAR);
                     x = z;
-                    printf("Gewonnnen");
+                    printf("\n%s", str_einfach[Random]);
+                    printf("\nGewonnen!!!!!!!!!!!!!");
+                    Input = _getch();
                 }
 
                 
 
             }
 
-            
             ResetBuchstaben();
 
             Fehler = 0;
             z = 0;
             x = 0;
-            Pointer = "0";
+
+            
 
             system(CLEAR);
             Auswahl = "Anfänger";
@@ -265,7 +268,7 @@ int main() {
             
                 
             
-
+          
 
 
 
