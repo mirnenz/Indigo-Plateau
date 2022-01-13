@@ -42,3 +42,14 @@
 	- verschiedene Programmversionen, gelöst
 	- Mergeprobleme am Beginn -> gitignore Datei
 	- Branch Benennung 
+
+### Sprint planning am 13.01.2022
+- Sprintlänge von 2 Wochen 
+- Zentrale Aufganben 
+	- Einbindung des Easter Eggs 
+	- BugFix Vokale 
+	- Schwierigkeitsstufen
+- Präsentation vorbeiereiten
+- Präsentationstermin festlegen 
+- Nächstes Daily 20.1. 
+- Bis dahin Kommunikation und Updates über Whatsapp 
