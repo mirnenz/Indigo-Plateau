@@ -10,8 +10,8 @@
 int i = 0;
 char* Auswahl = "Spiel_starten";
 char Input;
-char Buchstabe1 = '_', Buchstabe2 = '_', Buchstabe3 = '_', Buchstabe4 = '_', Buchstabe5 = '_', Buchstabe6 = '_', Buchstabe7 = '_', Buchstabe8 = '_';
-char Buchstabe1Char, Buchstabe2Char, Buchstabe3Char, Buchstabe4Char, Buchstabe5Char, Buchstabe6Char, Buchstabe7Char, Buchstabe8Char;
+int str_Verarbeitung_Laenge = 20;
+char str_Verarbeitung[20];
 char EingabeBuchstabe;
 int Fehler = 0;
 int Aenderung = 0;
@@ -48,25 +48,7 @@ int Zufallszahl() {
     return(random);
 }
 
-void ResetBuchstaben() {
-    Buchstabe1 = '_';
-    Buchstabe2 = '_';
-    Buchstabe3 = '_';
-    Buchstabe4 = '_';
-    Buchstabe5 = '_';
-    Buchstabe6 = '_';
-    Buchstabe7 = '_';
-    Buchstabe8 = '_';
 
-    Buchstabe1Char = 0;
-    Buchstabe2Char = 0;
-    Buchstabe3Char = 0;
-    Buchstabe4Char = 0;
-    Buchstabe5Char = 0;
-    Buchstabe6Char = 0;
-    Buchstabe7Char = 0;
-    Buchstabe8Char = 0;
-}
 
 
 //FUNKTIONEN
@@ -74,7 +56,7 @@ void ResetBuchstaben() {
 void Startscreen() {
     printf("\n\n\n");
     printf("\t\tMit Pfeiltasten, Enter und ESC kann im Spiel navigiert und bestaetigt werden\n");
-    printf("\t\tDie aktuelle Auswahl wird");
+    printf("\t\tDie aktuelle Auswahl oder ein Highlight wird");
     printf(ANSI_RED);
     printf(" ROT ");
     printf(ANSI_RESET);
@@ -148,41 +130,9 @@ void Experte() {
 }
 
 //Schwierigkeitsauswahl (Anfänger, Fortgeschritten, Experte)
-void AnfängerSchw() {
-    Input = '0';
-    printf("\n\t");
-    printf("%c ", Buchstabe1);
-    printf("%c ", Buchstabe2);
-    printf("%c ", Buchstabe3);
-    printf("%c", Buchstabe4);
-    printf("\n");
-}
 
-void FortgeschrittenSchw() {
-    Input = '0';
-    printf("\n\t");
-    printf("%c ", Buchstabe1);
-    printf("%c ", Buchstabe2);
-    printf("%c ", Buchstabe3);
-    printf("%c ", Buchstabe4);
-    printf("%c ", Buchstabe5);
-    printf("%c", Buchstabe6);
-    printf("\n");
-}
 
-void ExperteSchw() {
-    Input = '0';
-    printf("\n\t");
-    printf("%c ", Buchstabe1);
-    printf("%c ", Buchstabe2);
-    printf("%c ", Buchstabe3);
-    printf("%c ", Buchstabe4);
-    printf("%c ", Buchstabe5);
-    printf("%c ", Buchstabe6);
-    printf("%c ", Buchstabe7);
-    printf("%c", Buchstabe8);
-    printf("\n");
-}
+
 
 //Regeln
 void Regeln() {
@@ -211,91 +161,101 @@ void Regeln() {
 
 //Galgen Funktionen
 void Galgen() {
-    printf("_________\n");
-    printf("| /      \n");
-    printf("|/       \n");
-    printf("|        \n");
-    printf("|        \n");
-    printf("|        \n");
-    printf("|________\n");
+    printf("\t_________\n");
+    printf("\t| /      \n");
+    printf("\t|/       \n");
+    printf("\t|        \n");
+    printf("\t|        \n");
+    printf("\t|        \n");
+    printf("\t|________\n");
 }
 // Galgen Bild nach 1.Fehler
 void GalgenSeil() {
-    printf("_________\n");
-    printf("| /    | \n");
-    printf("|/       \n");
-    printf("|        \n");
-    printf("|        \n");
-    printf("|        \n");
-    printf("|________\n");
+    printf("\t_________\n");
+    printf("\t| /    | \n");
+    printf("\t|/       \n");
+    printf("\t|        \n");
+    printf("\t|        \n");
+    printf("\t|        \n");
+    printf("\t|________\n");
 }
 // Galgen Bild nach 2.Fehler
 void GalgenKopf() {
-    printf("_________\n");
-    printf("| /    | \n");
-    printf("|/     O \n");
-    printf("|        \n");
-    printf("|        \n");
-    printf("|        \n");
-    printf("|________\n");
+    printf("\t_________\n");
+    printf("\t| /    | \n");
+    printf("\t|/     O \n");
+    printf("\t|        \n");
+    printf("\t|        \n");
+    printf("\t|        \n");
+    printf("\t|________\n");
 }
 // Galgen Bild nach 3.Fehler
 void GalgenBrust() {
-    printf("_________\n");
-    printf("| /    | \n");
-    printf("|/     O \n");
-    printf("|      | \n");
-    printf("|        \n");
-    printf("|        \n");
-    printf("|________\n");
+    printf("\t_________\n");
+    printf("\t| /    | \n");
+    printf("\t|/     O \n");
+    printf("\t|      | \n");
+    printf("\t|        \n");
+    printf("\t|        \n");
+    printf("\t|________\n");
 }
 // Galgen Bild nach 4.Fehler
 void GalgenArmR() {
-    printf("_________\n");
-    printf("| /    | \n");
-    printf("|/     O \n");
-    printf("|      |\\\n");
-    printf("|        \n");
-    printf("|        \n");
-    printf("|________\n");
+    printf("\t_________\n");
+    printf("\t| /    | \n");
+    printf("\t|/     O \n");
+    printf("\t|      |\\\n");
+    printf("\t|        \n");
+    printf("\t|        \n");
+    printf("\t|________\n");
 }
 // Galgen Bild nach 5.Fehler
 void GalgenArmRL() {
-    printf("_________\n");
-    printf("| /    | \n");
-    printf("|/     O \n");
-    printf("|     /|\\\n");
-    printf("|        \n");
-    printf("|        \n");
-    printf("|________\n");
+    printf("\t_________\n");
+    printf("\t| /    | \n");
+    printf("\t|/     O \n");
+    printf("\t|     /|\\\n");
+    printf("\t|        \n");
+    printf("\t|        \n");
+    printf("\t|________\n");
 }
 // Galgen Bild nach 6.Fehler
 void GalgenBeinR() {
-    printf("_________\n");
-    printf("| /    | \n");
-    printf("|/     O \n");
-    printf("|     /|\\\n");
-    printf("|       \\\n");
-    printf("|        \n");
-    printf("|________\n");
+    printf("\t_________\n");
+    printf("\t| /    | \n");
+    printf("\t|/     O \n");
+    printf("\t|     /|\\\n");
+    printf("\t|       \\\n");
+    printf("\t|        \n");
+    printf("\t|________\n");
 }
 // Galgen Bild nach 7.Fehler
 void GalgenBeinRL() {
-    printf("_________\n");
-    printf("| /    | \n");
-    printf("|/     O \n");
-    printf("|     /|\\\n");
-    printf("|     / \\\n");
-    printf("|        \n");
-    printf("|________\n");
+    printf("\t_________\n");
+    printf("\t| /    | \n");
+    printf("\t|/     O \n");
+    printf("\t|     /|\\\n");
+    printf("\t|     / \\\n");
+    printf("\t|        \n");
+    printf("\t|________\n");
 }
 // Bild nach Verloren
-void Verloren() {
-    printf("######################################################\n");
-    printf("#   #   # #### ###  #       ##    ###  #### ##  #   #\n");
-    printf("#   #   # #    #  # #     ##  ##  #  # #    # # #   #\n");
-    printf("#   #   # #### ###  #    ##    ## ###  #### #  ##   #\n");
-    printf("#    # #  #    # #  #     ##  ##  # #  #    #  ##   #\n");
-    printf("#     #   #### #  # ####    ##    #  # #### #   #   #\n");
-    printf("######################################################\n");
+void VerlorenPrint() {
+    printf("\t######################################################\n");
+    printf("\t#   #   # #### ###  #       ##    ###  #### ##  #   #\n");
+    printf("\t#   #   # #    #  # #     ##  ##  #  # #    # # #   #\n");
+    printf("\t#   #   # #### ###  #    ##    ## ###  #### #  ##   #\n");
+    printf("\t#    # #  #    # #  #     ##  ##  # #  #    #  ##   #\n");
+    printf("\t#     #   #### #  # ####    ##    #  # #### #   #   #\n");
+    printf("\t######################################################\n");
+}
+
+void GewonnenPrint() {
+    printf("\t##############################################################\n");
+    printf("\t#   #### ##### #       #   ##   ##   #  ##   # ##### ##   #  #\n");
+    printf("\t#  #     #     #   #   #  #  #  # #  #  # #  # #     # #  #  #\n");
+    printf("\t#  #  ## #####  # # # #  #    # #  # #  #  # # ##### #  # #  #\n");
+    printf("\t#  #   # #      # # # #   #  #  #  # #  #  # # #     #  # #  #\n");
+    printf("\t#   #### #####   #   #     ##   #    #  #    # ##### #    #  #\n");
+    printf("\t##############################################################\n");
 }
