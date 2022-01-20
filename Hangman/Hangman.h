@@ -1,4 +1,4 @@
-//DEFINITIONEN
+ï»¿//DEFINITIONEN
 //Definitionen Pfeiltasten
 #define UP_ARROW    72
 #define LEFT_ARROW  75
@@ -29,9 +29,10 @@ char* Pointer = "0";
 #define ANSI_CYAN "\x1b[36m" 
 #define ANSI_RESET "\x1b[0m"
 #define ANSI_BOLD "\033[1m"
+#define ANSI_BOLD_RESET "\033[0m"
 
-//Prüfung Betriebssystem
-void PrüfungBetr() {
+//PrÃ¼fung Betriebssystem
+void PrÃ¼fungBetr() {
     #ifdef _WIN32
     #define CLEAR "cls"
     #else 
@@ -52,11 +53,11 @@ int Zufallszahl() {
 
 
 //FUNKTIONEN
-//Hauptmenü Funktionen
+//HauptmenÃ¼ Funktionen
 void Startscreen() {
     printf("\n\n\n");
     printf("\t\tMit Pfeiltasten, Enter und ESC kann im Spiel navigiert und bestaetigt werden\n");
-    printf("\t\tDie aktuelle Auswahl oder ein Highlight wird");
+    printf("\t\tDie aktuelle Auswahl oder Highlights werden");
     printf(ANSI_RED);
     printf(" ROT ");
     printf(ANSI_RESET);
@@ -68,68 +69,213 @@ void Startscreen() {
 }
 void Spiel_startenROT() {
     Input = '0';
-    printf("\n\n\n");
+    
+    printf("\t\t\t\t\t\t_________\n");
+    printf("  #  #    #   ##  #  ### ##   ##    #   ##  #  \t| /    | \n");
+    printf("  #  #  #   # # # # #    # # # #  #   # # # #  \t|/     ");
+    printf(ANSI_RED); 
+    printf("O \n");
+    printf(ANSI_RESET);
+    printf("  ####  ##### # # # # ## # # # #  ##### # # #  \t|     ");
+    printf(ANSI_RED);
+    printf("/|\\\n");
+    printf(ANSI_RESET);
+    printf("  #  #  #   # #  ## #  # # # # #  #   # #  ##  \t|     ");
+    printf(ANSI_RED);
+    printf("/ \\\n");
+    printf(ANSI_RESET);
+    printf("  #  #  #   # #   #  ### #  #  #  #   # #   #  \t|        \n");
+    printf("\t\t\t\t\t\t|________\n");
+
+    printf(ANSI_BOLD);
+    printf("\n----------------HAUPTMENUE-------------------------------");
+    printf(ANSI_BOLD_RESET);
+
+
+    printf("\n\n");
     printf(ANSI_RED);
     printf("\t\tSpiel starten\n");
     printf(ANSI_RESET);
     printf("\t\tRegeln\n");
-    printf("\t\tSpiel beenden\n");
+    printf("\t\tSpiel beenden\n\n");
+
+    printf("---------------------------------------------------------");
 }
 
 void RegelnROT() {
     Input = '0';
-    printf("\n\n\n");
+
+    printf("\t\t\t\t\t\t_________\n");
+    printf("  #  #    #   ##  #  ### ##   ##    #   ##  #  \t| /    | \n");
+    printf("  #  #  #   # # # # #    # # # #  #   # # # #  \t|/     ");
+    printf(ANSI_RED);
+    printf("O \n");
+    printf(ANSI_RESET);
+    printf("  ####  ##### # # # # ## # # # #  ##### # # #  \t|     ");
+    printf(ANSI_RED);
+    printf("/|\\\n");
+    printf(ANSI_RESET);
+    printf("  #  #  #   # #  ## #  # # # # #  #   # #  ##  \t|     ");
+    printf(ANSI_RED);
+    printf("/ \\\n");
+    printf(ANSI_RESET);
+    printf("  #  #  #   # #   #  ### #  #  #  #   # #   #  \t|        \n");
+    printf("\t\t\t\t\t\t|________\n");
+
+    printf(ANSI_BOLD);
+    printf("\n----------------HAUPTMENUE-------------------------------");
+    printf(ANSI_BOLD_RESET);
+
+    printf("\n\n");
     printf("\t\tSpiel starten\n");
     printf(ANSI_RED);
     printf("\t\tRegeln\n");
     printf(ANSI_RESET);
-    printf("\t\tSpiel beenden\n");
+    printf("\t\tSpiel beenden\n\n");
+
+    printf("---------------------------------------------------------");
 }
 
 void Spiel_beendenROT() {
     Input = '0';
-    printf("\n\n\n");
+
+    printf("\t\t\t\t\t\t_________\n");
+    printf("  #  #    #   ##  #  ### ##   ##    #   ##  #  \t| /    | \n");
+    printf("  #  #  #   # # # # #    # # # #  #   # # # #  \t|/     ");
+    printf(ANSI_RED);
+    printf("O \n");
+    printf(ANSI_RESET);
+    printf("  ####  ##### # # # # ## # # # #  ##### # # #  \t|     ");
+    printf(ANSI_RED);
+    printf("/|\\\n");
+    printf(ANSI_RESET);
+    printf("  #  #  #   # #  ## #  # # # # #  #   # #  ##  \t|     ");
+    printf(ANSI_RED);
+    printf("/ \\\n");
+    printf(ANSI_RESET);
+    printf("  #  #  #   # #   #  ### #  #  #  #   # #   #  \t|        \n");
+    printf("\t\t\t\t\t\t|________\n");
+
+    printf(ANSI_BOLD);
+    printf("\n----------------HAUPTMENUE-------------------------------");
+    printf(ANSI_BOLD_RESET);
+
+    printf("\n\n");
     printf("\t\tSpiel starten\n");
     printf(ANSI_RESET);
     printf("\t\tRegeln\n");
     printf(ANSI_RED);
-    printf("\t\tSpiel beenden\n");
+    printf("\t\tSpiel beenden\n\n");
     printf(ANSI_RESET);
+
+    printf("---------------------------------------------------------");
 }
 
 //Spiel starten Funktionen (Schwierigkeitsauswahl)
-void Anfänger() {
+void AnfÃ¤nger() {
     Input = '0';
-    printf("\n\n\n");
+
+    printf("\t\t\t\t\t\t_________\n");
+    printf("  #  #    #   ##  #  ### ##   ##    #   ##  #  \t| /    | \n");
+    printf("  #  #  #   # # # # #    # # # #  #   # # # #  \t|/     ");
+    printf(ANSI_RED);
+    printf("O \n");
+    printf(ANSI_RESET);
+    printf("  ####  ##### # # # # ## # # # #  ##### # # #  \t|     ");
+    printf(ANSI_RED);
+    printf("/|\\\n");
+    printf(ANSI_RESET);
+    printf("  #  #  #   # #  ## #  # # # # #  #   # #  ##  \t|     ");
+    printf(ANSI_RED);
+    printf("/ \\\n");
+    printf(ANSI_RESET);
+    printf("  #  #  #   # #   #  ### #  #  #  #   # #   #  \t|        \n");
+    printf("\t\t\t\t\t\t|________\n");
+
+    printf(ANSI_BOLD);
+    printf("\n----------------SCHWIERIGKEITSAUSWAHL--------------------");
+    printf(ANSI_BOLD_RESET);
+
+    printf("\n\n");
     printf(ANSI_RED);
     printf("\t\tAnfaenger\n");
     printf(ANSI_RESET);
     printf("\t\tFortgeschritten\n");
-    printf("\t\tExperte\n");
+    printf("\t\tExperte\n\n");
+
+    printf("---------------------------------------------------------");
 }
 
 void Fortgeschritten() {
     Input = '0';
-    printf("\n\n\n");
+
+    printf("\t\t\t\t\t\t_________\n");
+    printf("  #  #    #   ##  #  ### ##   ##    #   ##  #  \t| /    | \n");
+    printf("  #  #  #   # # # # #    # # # #  #   # # # #  \t|/     ");
+    printf(ANSI_RED);
+    printf("O \n");
+    printf(ANSI_RESET);
+    printf("  ####  ##### # # # # ## # # # #  ##### # # #  \t|     ");
+    printf(ANSI_RED);
+    printf("/|\\\n");
+    printf(ANSI_RESET);
+    printf("  #  #  #   # #  ## #  # # # # #  #   # #  ##  \t|     ");
+    printf(ANSI_RED);
+    printf("/ \\\n");
+    printf(ANSI_RESET);
+    printf("  #  #  #   # #   #  ### #  #  #  #   # #   #  \t|        \n");
+    printf("\t\t\t\t\t\t|________\n");
+
+    printf(ANSI_BOLD);
+    printf("\n----------------SCHWIERIGKEITSAUSWAHL--------------------");
+    printf(ANSI_BOLD_RESET);
+
+    printf("\n\n");
     printf("\t\tAnfaenger\n");
     printf(ANSI_RED);
     printf("\t\tFortgeschritten\n");
     printf(ANSI_RESET);
-    printf("\t\tExperte\n");
+    printf("\t\tExperte\n\n");
+
+    printf("---------------------------------------------------------");
 }
 
 void Experte() {
     Input = '0';
-    printf("\n\n\n");
+
+    printf("\t\t\t\t\t\t_________\n");
+    printf("  #  #    #   ##  #  ### ##   ##    #   ##  #  \t| /    | \n");
+    printf("  #  #  #   # # # # #    # # # #  #   # # # #  \t|/     ");
+    printf(ANSI_RED);
+    printf("O \n");
+    printf(ANSI_RESET);
+    printf("  ####  ##### # # # # ## # # # #  ##### # # #  \t|     ");
+    printf(ANSI_RED);
+    printf("/|\\\n");
+    printf(ANSI_RESET);
+    printf("  #  #  #   # #  ## #  # # # # #  #   # #  ##  \t|     ");
+    printf(ANSI_RED);
+    printf("/ \\\n");
+    printf(ANSI_RESET);
+    printf("  #  #  #   # #   #  ### #  #  #  #   # #   #  \t|        \n");
+    printf("\t\t\t\t\t\t|________\n");
+
+    printf(ANSI_BOLD);
+    printf("\n----------------SCHWIERIGKEITSAUSWAHL--------------------");
+    printf(ANSI_BOLD_RESET);
+
+    printf("\n\n");
     printf("\t\tAnfaenger\n");
     printf(ANSI_RESET);
     printf("\t\tFortgeschritten\n");
     printf(ANSI_RED);
-    printf("\t\tExperte\n");
+    printf("\t\tExperte\n\n");
     printf(ANSI_RESET);
+
+    printf("---------------------------------------------------------");
 }
 
-//Schwierigkeitsauswahl (Anfänger, Fortgeschritten, Experte)
+//Schwierigkeitsauswahl (AnfÃ¤nger, Fortgeschritten, Experte)
 
 
 
