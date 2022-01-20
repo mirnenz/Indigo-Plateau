@@ -7,9 +7,8 @@
 #include "Hangman.h"
 
 // TO-DO:
-// prüfen dass kein wort eingegeben wurde
-// bei einfach random = 1 rausnehmen
-// easter eggs einbauen
+// Code aufräumen
+// Kommentare hinzufügen
 
 
 int x = 0;
@@ -19,7 +18,7 @@ int z = 0;
 int main() {
 
     //4 Buchstaben   
-    char str_einfach[10][16] = { "seil", "ente", "hexe","erde", "eile", "fass"};
+    char str_einfach[10][16] = { "seil", "happy", "hexe","erde", "eile", "fass"};
     //Test zum Ausgeben des Wortes
      //printf("%s\n", str_einfach[2]);
     //6 Buchstaben   
@@ -28,6 +27,7 @@ int main() {
     //8 Buchstaben
     char str_schwer[10][16] = {"rucksack", "sandsack", "internet", "ewigkeit"};
     //printf("%s\n", str_schwer[2]);
+    char happy[] = { "happy" };
   
  
 
@@ -133,7 +133,6 @@ int main() {
             system(CLEAR);
             Auswahl = "AnfängerSchw";
             int Random = Zufallszahl();
-            Random = 1;
             i = 0;
             x = 0;
             int Länge = strlen(str_einfach[Random]);
@@ -145,6 +144,9 @@ int main() {
             int Richtige = 0;
             char FalscheBuchstaben[10];
             int FalscheBuchstabenIndex = 0;
+            bool happygewonnen = false;
+            bool happyverloren = false;
+
 
             
             for (; i < 10;) {
@@ -210,22 +212,37 @@ int main() {
                     Verloren = true;
                 }
 
+
+                if (Fehler < 7) {
+                    printf("\n\tBitte einen");
+                    printf(ANSI_RED);
+                    printf(" Buchstaben ");
+                    printf(ANSI_RESET);
+                    printf("eingeben:\n"); 
+                    EingabeBuchstabe = _getch();
+                }
+                else if (Fehler == 7) {
+                    printf("\n\tBitte die");
+                    printf(ANSI_RED);
+                    printf(" Entertaste ");
+                    printf(ANSI_RESET);
+                    printf("druecken um fortzufahren!");
+                    _getch();
+                }
+
                 
-                printf("\n\tBitte einen");
-                printf(ANSI_RED);
-                printf(" Buchstaben ");
-                printf(ANSI_RESET);
-                printf("eingeben:\n");
-                scanf("\t%c", &EingabeBuchstabe);
-
-
-                if (EingabeBuchstabe == '\n') {
+                
+                if (EingabeBuchstabe == '\n' || EingabeBuchstabe == 'q' || EingabeBuchstabe == 'w' || EingabeBuchstabe == 'e' || EingabeBuchstabe == 'r' ||
+                    EingabeBuchstabe == 't' || EingabeBuchstabe == 'z' || EingabeBuchstabe == 'u' || EingabeBuchstabe == 'i' || EingabeBuchstabe == 'o' ||
+                    EingabeBuchstabe == 'p' || EingabeBuchstabe == 'ü' || EingabeBuchstabe == 'a' || EingabeBuchstabe == 's' || EingabeBuchstabe == 'd' ||
+                    EingabeBuchstabe == 'f' || EingabeBuchstabe == 'g' || EingabeBuchstabe == 'h' || EingabeBuchstabe == 'j' || EingabeBuchstabe == 'k' ||
+                    EingabeBuchstabe == 'l' || EingabeBuchstabe == 'ö' || EingabeBuchstabe == 'ä' || EingabeBuchstabe == 'y' || EingabeBuchstabe == 'x' ||
+                    EingabeBuchstabe == 'c' || EingabeBuchstabe == 'v' || EingabeBuchstabe == 'b' || EingabeBuchstabe == 'n' || EingabeBuchstabe == 'm') {
+                }
+                else {
                     continue;
                 }
-                //prüfen dass kein wort eingegeben wurde
-
-                
-
+              
 
                 for (; x < Länge;) {
 
@@ -267,10 +284,77 @@ int main() {
 
             }
 
-               
+                                   
             system(CLEAR);
 
-            if (Gewonnen == true) {
+            if (Fehler == 8) {
+                Fehler--;
+            }
+
+            x = 0;
+            i = 0;
+
+            for (;x < Länge;) {
+                if (happy[x] == str_einfach[Random][x]) {
+                    i++;
+                }
+                
+                x++;
+            }
+            x = 0;
+
+            if (i == Länge && Gewonnen == true) {
+                happygewonnen = true;
+            }
+            i = 0;
+
+            for (;x < Länge;) {
+                if (happy[x] == str_einfach[Random][x]) {
+                    i++;
+                }
+                x++;
+            }
+            x = 0;
+
+            if (i == Länge && Verloren == true) {
+                happyverloren = true;
+            }
+            i = 0;            
+            
+
+            if (Gewonnen == true && happygewonnen == true) {
+                
+                printf("\n\t     .-\"\"\"\"\"\"-.\n");
+                printf("\t   .'          '.\n");
+                printf("\t  /   O      O   \\\n");
+                printf("\t :                :\n");
+                printf("\t |                |\n");
+                printf("\t : ',          ,' :\n");
+                printf("\t  \\  '-......-'  /\n");
+                printf("\t   '.          .'\n");
+                printf("\t     '-......-'\n");
+
+                printf("\n\n\tDie Fehleranzahl war: %d", Fehler);
+                printf("\n\tDas Wort war: ");
+
+                x = 0;
+                for (; x < Länge;) {
+
+                    printf("%c", str_Verarbeitung[x]);
+
+                    x++;
+                }
+
+                printf("\n\n\tBitte die");
+                printf(ANSI_RED);
+                printf(" Entertaste ");
+                printf(ANSI_RESET);
+                printf("druecken um fortzufahren!");
+
+                _getch();
+            }
+
+            if (Gewonnen == true && happygewonnen != true) {
                 printf("\n");
                 GewonnenPrint();
                 printf("\n\n\tDie Fehleranzahl war: %d", Fehler);
@@ -292,7 +376,41 @@ int main() {
 
                 _getch();
             }
-            else if (Verloren == true) {
+            else if (Verloren == true && happyverloren == true) {
+
+                printf("\n\t     .-\"\"\"\"\"\"-.\n");
+                printf("\t   .'  \\\\  //  '.\n");
+                printf("\t  /   O      O   \\\n");
+                printf("\t :                :\n");
+                printf("\t |                |\n");
+                printf("\t :       __       :\n");
+                printf("\t  \\  .-\"\`  `\"-.  \/ \n");
+                printf("\t   '.          .'\n");
+                printf("\t     '-......-'\n");
+
+
+
+                printf("\n\n\tDie Fehleranzahl war: %d", Fehler);
+                printf("\n\tDas Wort war: ");
+
+                x = 0;
+                for (; x < Länge;) {
+
+                    printf("%c", str_einfach[Random][x]);
+
+                    x++;
+                }
+
+
+                printf("\n\n\tBitte die");
+                printf(ANSI_RED);
+                printf(" Entertaste ");
+                printf(ANSI_RESET);
+                printf("druecken um fortzufahren!");
+                _getch();
+
+            }
+            else if (Verloren == true && i < 7) {
                 printf("\n");
                 VerlorenPrint();
 
@@ -327,6 +445,7 @@ int main() {
             Abaenderung = false;
             Verloren = false;
             Gewonnen = false;
+            happygewonnen = false;
             
             system(CLEAR);
             Auswahl = "Anfänger";
@@ -369,7 +488,7 @@ int main() {
             }
             i = 0;
 
-
+           
             for (; Gewonnen != true && Verloren != true;) {
 
                 system(CLEAR);
@@ -416,19 +535,39 @@ int main() {
                 }
 
 
-                printf("\n\tBitte einen");
-                printf(ANSI_RED);
-                printf(" Buchstaben ");
-                printf(ANSI_RESET);
-                printf("eingeben:\n");
-                scanf("\t%c", &EingabeBuchstabe);
+                if (Fehler < 7) {
+                    printf("\n\tBitte einen");
+                    printf(ANSI_RED);
+                    printf(" Buchstaben ");
+                    printf(ANSI_RESET);
+                    printf("eingeben:\n");
+                    EingabeBuchstabe = _getch();
+                }
+                else if (Fehler == 7) {
+                    printf("\n\tBitte die");
+                    printf(ANSI_RED);
+                    printf(" Entertaste ");
+                    printf(ANSI_RESET);
+                    printf("druecken um fortzufahren!");
+                    _getch();
+                }
 
 
                 if (EingabeBuchstabe == '\n') {
                     continue;
                 }
-                //prüfen dass kein wort eingegeben wurde
+                
 
+                if (EingabeBuchstabe == '\n' || EingabeBuchstabe == 'q' || EingabeBuchstabe == 'w' || EingabeBuchstabe == 'e' || EingabeBuchstabe == 'r' ||
+                    EingabeBuchstabe == 't' || EingabeBuchstabe == 'z' || EingabeBuchstabe == 'u' || EingabeBuchstabe == 'i' || EingabeBuchstabe == 'o' ||
+                    EingabeBuchstabe == 'p' || EingabeBuchstabe == 'ü' || EingabeBuchstabe == 'a' || EingabeBuchstabe == 's' || EingabeBuchstabe == 'd' ||
+                    EingabeBuchstabe == 'f' || EingabeBuchstabe == 'g' || EingabeBuchstabe == 'h' || EingabeBuchstabe == 'j' || EingabeBuchstabe == 'k' ||
+                    EingabeBuchstabe == 'l' || EingabeBuchstabe == 'ö' || EingabeBuchstabe == 'ä' || EingabeBuchstabe == 'y' || EingabeBuchstabe == 'x' ||
+                    EingabeBuchstabe == 'c' || EingabeBuchstabe == 'v' || EingabeBuchstabe == 'b' || EingabeBuchstabe == 'n' || EingabeBuchstabe == 'm') {
+                }
+                else {
+                    continue;
+                }
 
 
 
@@ -474,6 +613,10 @@ int main() {
 
 
             system(CLEAR);
+
+            if (Fehler == 8) {
+                Fehler--;
+            }
 
             if (Gewonnen == true) {
                 printf("\n");
@@ -621,21 +764,37 @@ int main() {
                     Verloren = true;
                 }
 
-
-                printf("\n\tBitte einen");
-                printf(ANSI_RED);
-                printf(" Buchstaben ");
-                printf(ANSI_RESET);
-                printf("eingeben:\n");
-                scanf("\t%c", &EingabeBuchstabe);
+                if (Fehler < 7) {
+                    printf("\n\tBitte einen");
+                    printf(ANSI_RED);
+                    printf(" Buchstaben ");
+                    printf(ANSI_RESET);
+                    printf("eingeben:\n");
+                    EingabeBuchstabe = _getch();
+                }
+                else if (Fehler == 7) {
+                    printf("\n\tBitte die");
+                    printf(ANSI_RED);
+                    printf(" Entertaste ");
+                    printf(ANSI_RESET);
+                    printf("druecken um fortzufahren!");
+                    _getch();
+                }
 
 
                 if (EingabeBuchstabe == '\n') {
                     continue;
                 }
-                //prüfen dass kein wort eingegeben wurde
-
-
+                if (EingabeBuchstabe == '\n' || EingabeBuchstabe == 'q' || EingabeBuchstabe == 'w' || EingabeBuchstabe == 'e' || EingabeBuchstabe == 'r' ||
+                    EingabeBuchstabe == 't' || EingabeBuchstabe == 'z' || EingabeBuchstabe == 'u' || EingabeBuchstabe == 'i' || EingabeBuchstabe == 'o' ||
+                    EingabeBuchstabe == 'p' || EingabeBuchstabe == 'ü' || EingabeBuchstabe == 'a' || EingabeBuchstabe == 's' || EingabeBuchstabe == 'd' ||
+                    EingabeBuchstabe == 'f' || EingabeBuchstabe == 'g' || EingabeBuchstabe == 'h' || EingabeBuchstabe == 'j' || EingabeBuchstabe == 'k' ||
+                    EingabeBuchstabe == 'l' || EingabeBuchstabe == 'ö' || EingabeBuchstabe == 'ä' || EingabeBuchstabe == 'y' || EingabeBuchstabe == 'x' ||
+                    EingabeBuchstabe == 'c' || EingabeBuchstabe == 'v' || EingabeBuchstabe == 'b' || EingabeBuchstabe == 'n' || EingabeBuchstabe == 'm') {
+                }
+                else {
+                    continue;
+                }
 
 
                 for (; x < Länge;) {
@@ -680,6 +839,10 @@ int main() {
 
 
             system(CLEAR);
+
+            if (Fehler == 8) {
+                Fehler--;
+            }
 
             if (Gewonnen == true) {
                 printf("\n");
@@ -779,7 +942,7 @@ int main() {
         }
 
         //Spiel beenden
-        if (Input == ENTER & Auswahl == "Spiel_beenden") {
+        if ( Auswahl == "Spiel_beenden" && Input == ENTER) {
             exit(0);
             //eventuell zum trollen shutdown
         }
