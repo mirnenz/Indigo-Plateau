@@ -1,38 +1,31 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdbool.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <conio.h>
+//Hier wird die Hangman.h inkludiert
 #include "Hangman.h"
 
+
 // TO-DO:
-// Code aufräumen
 // Kommentare hinzufügen
 
 
-int x = 0;
-int z = 0;
+
 
 
 int main() {
 
+    //Hier werden die die Arrays für das Spiel definiert und befüllt
     //4 Buchstaben   
     char str_einfach[10][16] = { "seil", "happy", "hexe","erde", "eile", "fass"};
     //Test zum Ausgeben des Wortes
-     //printf("%s\n", str_einfach[2]);
+
     //6 Buchstaben   
     char str_mittel[10][16] = {"wertig", "effekt", "eigelb", "safari", "demenz", "center"};
-    //printf("%s\n", str_mittel[2]);
+
     //8 Buchstaben
     char str_schwer[10][16] = {"rucksack", "sandsack", "internet", "ewigkeit"};
-    //printf("%s\n", str_schwer[2]);
+
     char happy[] = { "happy" };
   
  
-
-    //Menü
-
+    //Hier wird das Hauptmenü geprinted
     PrüfungBetr();
 
     Startscreen();
@@ -42,8 +35,10 @@ int main() {
     {
         Input = _getch();
 
-        //Hauptmenü Screen
+        //In den folgenden IF-Anweisungen wird jeweils geprüft auf welchem Auswahlfeld sich der User befindet.
+        //Anhand dessen werden dann die unterschiedlichen Screens geprinted
 
+        //Hauptmenü
         if (Input == DOWN_ARROW & Auswahl == "Spiel_starten") {
             system(CLEAR);
             RegelnROT();
@@ -76,7 +71,7 @@ int main() {
         }
        
 
-        //Spiel starten
+        //Spiel starten (Schwierigkeitsauswahl)
         if (Input == ENTER & Auswahl == "Spiel_starten") {
             system(CLEAR);
             Anfänger();
@@ -128,7 +123,8 @@ int main() {
             Auswahl = "Spiel_starten";
         }
 
-        //Schwierigkeitsauswahl
+        //Ab hier kommt der Code für das eigentliche Spiel an sich
+        //Hier wird Ingame Anfänger berechnet und geprinted
         if (Input == ENTER & Auswahl == "Anfänger") {
             system(CLEAR);
             Auswahl = "AnfängerSchw";
@@ -454,6 +450,8 @@ int main() {
             
             
         }
+
+        //Hier wird Ingame Fortgeschritten berechnet und geprinted
         else if (Input == ENTER & Auswahl == "Fortgeschritten") {
             system(CLEAR);
             Auswahl = "AnfängerSchw";
@@ -684,6 +682,8 @@ int main() {
 
         
         }
+
+        //Hier wird Ingame Experte berechnet und geprinted
         else if (Input == ENTER & Auswahl == "Experte") {
             system(CLEAR);
             Auswahl = "AnfängerSchw";
@@ -944,7 +944,6 @@ int main() {
         //Spiel beenden
         if ( Auswahl == "Spiel_beenden" && Input == ENTER) {
             exit(0);
-            //eventuell zum trollen shutdown
         }
 
     }

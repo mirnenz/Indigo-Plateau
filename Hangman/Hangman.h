@@ -1,4 +1,12 @@
-﻿//DEFINITIONEN
+﻿#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <limits.h>
+#include <stdlib.h>
+#include <conio.h>
+
+
+//DEFINITIONEN
 //Definitionen Pfeiltasten
 #define UP_ARROW    72
 #define LEFT_ARROW  75
@@ -6,19 +14,6 @@
 #define RIGHT_ARROW 77
 #define ENTER       13
 #define ESC         27
-
-int i = 0;
-char* Auswahl = "Spiel_starten";
-char Input;
-int str_Verarbeitung_Laenge = 20;
-char str_Verarbeitung[20];
-char EingabeBuchstabe;
-int Fehler = 0;
-int Aenderung = 0;
-char delimiter[] = " ";
-char* Pointer = "0";
-
-
 
 //Definitionen Farben
 #define ANSI_RED "\x1b[31m" 
@@ -31,7 +26,24 @@ char* Pointer = "0";
 #define ANSI_BOLD "\033[1m"
 #define ANSI_BOLD_RESET "\033[0m"
 
-//Prüfung Betriebssystem
+
+//Hier werden allgemeine Variablen definiert
+int i = 0;
+char* Auswahl = "Spiel_starten";
+char Input;
+int str_Verarbeitung_Laenge = 20;
+char str_Verarbeitung[20];
+char EingabeBuchstabe;
+int Fehler = 0;
+int Aenderung = 0;
+char delimiter[] = " ";
+char* Pointer = "0";
+int x = 0;
+int z = 0;
+
+
+//FUNKTIONEN
+//Prüfung Betriebssystem (Ob Windows oder Linux)
 void PrüfungBetr() {
     #ifdef _WIN32
     #define CLEAR "cls"
@@ -40,6 +52,7 @@ void PrüfungBetr() {
     #endif
 }
 
+//Hier wird eine Zufallszahl zwischen 0 und 5 errechnet
 int Zufallszahl() {
     int random;
     time_t zeit = time(NULL);
@@ -50,10 +63,7 @@ int Zufallszahl() {
 }
 
 
-
-
-//FUNKTIONEN
-//Hauptmenü Funktionen
+//In den folgenden Funktionen werden der Startscreen, das Hauptmenü und die Unterpunkte der Schwierigkeitsauswahl geprinted
 void Startscreen() {
     printf("\n\n\n");
     printf("\t\tMit Pfeiltasten, Enter und ESC kann im Spiel navigiert und bestaetigt werden\n");
@@ -67,6 +77,7 @@ void Startscreen() {
     char Weiter = _getch();
     system(CLEAR);
 }
+
 void Spiel_startenROT() {
     Input = '0';
     
@@ -171,7 +182,7 @@ void Spiel_beendenROT() {
     printf("---------------------------------------------------------");
 }
 
-//Spiel starten Funktionen (Schwierigkeitsauswahl)
+
 void Anfänger() {
     Input = '0';
 
@@ -275,12 +286,7 @@ void Experte() {
     printf("---------------------------------------------------------");
 }
 
-//Schwierigkeitsauswahl (Anfänger, Fortgeschritten, Experte)
-
-
-
-
-//Regeln
+//In dieser Funktion werden die Regeln geprinted
 void Regeln() {
     printf("\n\n\n");
     printf(ANSI_RED);
@@ -304,8 +310,8 @@ void Regeln() {
     printf("\t\t\t- Hier werden zufaellig Woerter mit 8 Buchstaben ausgewaehlt\n\n");
 }
 
-
-//Galgen Funktionen
+//Hier liegen die Funtkionen, in welchen die Galgen in den unterschiedlichen Stati geprinted werden
+//Außerdem liegen hier auch die Funktionen Gewonnenprint und Verlorenprint. In diesen wird ein Gewonnen oder ein Verloren "Schild" geprinted
 void Galgen() {
     printf("\t_________\n");
     printf("\t| /      \n");
@@ -315,7 +321,7 @@ void Galgen() {
     printf("\t|        \n");
     printf("\t|________\n");
 }
-// Galgen Bild nach 1.Fehler
+
 void GalgenSeil() {
     printf("\t_________\n");
     printf("\t| /    | \n");
@@ -325,7 +331,7 @@ void GalgenSeil() {
     printf("\t|        \n");
     printf("\t|________\n");
 }
-// Galgen Bild nach 2.Fehler
+
 void GalgenKopf() {
     printf("\t_________\n");
     printf("\t| /    | \n");
@@ -335,7 +341,7 @@ void GalgenKopf() {
     printf("\t|        \n");
     printf("\t|________\n");
 }
-// Galgen Bild nach 3.Fehler
+
 void GalgenBrust() {
     printf("\t_________\n");
     printf("\t| /    | \n");
@@ -345,7 +351,7 @@ void GalgenBrust() {
     printf("\t|        \n");
     printf("\t|________\n");
 }
-// Galgen Bild nach 4.Fehler
+
 void GalgenArmR() {
     printf("\t_________\n");
     printf("\t| /    | \n");
@@ -355,7 +361,7 @@ void GalgenArmR() {
     printf("\t|        \n");
     printf("\t|________\n");
 }
-// Galgen Bild nach 5.Fehler
+
 void GalgenArmRL() {
     printf("\t_________\n");
     printf("\t| /    | \n");
@@ -365,7 +371,7 @@ void GalgenArmRL() {
     printf("\t|        \n");
     printf("\t|________\n");
 }
-// Galgen Bild nach 6.Fehler
+
 void GalgenBeinR() {
     printf("\t_________\n");
     printf("\t| /    | \n");
@@ -375,7 +381,7 @@ void GalgenBeinR() {
     printf("\t|        \n");
     printf("\t|________\n");
 }
-// Galgen Bild nach 7.Fehler
+
 void GalgenBeinRL() {
     printf("\t_________\n");
     printf("\t| /    | \n");
@@ -385,7 +391,7 @@ void GalgenBeinRL() {
     printf("\t|        \n");
     printf("\t|________\n");
 }
-// Bild nach Verloren
+
 void VerlorenPrint() {
     printf("\t######################################################\n");
     printf("\t#   #   # #### ###  #       ##    ###  #### ##  #   #\n");
