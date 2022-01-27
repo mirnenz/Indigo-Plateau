@@ -52,4 +52,17 @@
 - Präsentation vorbeiereiten
 - Präsentationstermin festlegen 
 - Nächstes Daily 20.1. 
-- Bis dahin Kommunikation und Updates über Whatsapp 
+- Bis dahin Kommunikation und Updates über Whatsapp
+
+### Daily am 20.01.2022
+- Fast fertig 
+- noch ein Paar Fixes und Clean Code
+
+### Sprint Review 27.01.2022
+- keine Probleme 
+- Fertigstellung noch vor dem Zeitlplan 
+- Super Kommunikation und Absprachen 
+- Präsentationsaufteilung und Folien besprechen
+- Zukunftsperspektive für das Spiel besprechen 
+- nächstes Treffen 3.2.2022 Präsentation üben
+- 
