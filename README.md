@@ -59,10 +59,13 @@
 - noch ein Paar Fixes und Clean Code
 
 ### Sprint Review 27.01.2022
-- keine Probleme 
-- Fertigstellung noch vor dem Zeitlplan 
-- Super Kommunikation und Absprachen 
-- Präsentationsaufteilung und Folien besprechen
-- Zukunftsperspektive für das Spiel besprechen 
-- nächstes Treffen 3.2.2022 Präsentation üben
-- 
+- Was ist gut gelaufen?
+	- Fertigstellung noch vor dem Zeitlplan 
+	- Alle sind zufrieden mit dem Endprodukt :)
+	- Super Kommunikation und Absprachen im Team
+	- Präsentationsaufteilung und Folien 
+- Probleme 
+	- kleinere Bugs, die aber direkt gefixt werden konnten
+- Planung 
+	- Zukunftsperspektive für das Spiel besprechen 
+	- nächstes Treffen am 3.2.2022: Präsentation üben
