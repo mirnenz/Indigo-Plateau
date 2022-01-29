@@ -2,13 +2,6 @@
 #include "Hangman.h"
 
 
-// TO-DO:
-// Kommentare hinzufügen
-
-
-
-
-
 int main() {
 
     //Hier werden die die Arrays für das Spiel definiert und befüllt
